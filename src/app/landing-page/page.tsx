@@ -1,9 +1,14 @@
-import { TheyLoveUs } from "@/views/widgets/they-love-us";
+import { TheyLoveUs, TheBestOfBest, WhyJoinUs, GrowYourCollection } from "@/views/widgets";
+import { HomepageTopArea } from "@/views/homepage-top-area";
 
 export default function LandingPage() {
   return (
-    <main className="w-full">
+    <main>
+      <HomepageTopArea />
+      <TheBestOfBest />
+      <WhyJoinUs />
       <TheyLoveUs />
+      <GrowYourCollection />
     </main>
   );
 }
