@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import clsx from "clsx";
 
 export default function Footer() {
 
@@ -84,17 +85,31 @@ export default function Footer() {
   return (
     <footer className="w-full bg-slate-900 text-slate-200">
       <div className="container flex flex-col">
-        <div className="w-full flex gap-12 py-12 border-t border-b border-[#334455]">
+        <div className={clsx(
+          "w-full flex flex-col items-center justify-center gap-12 py-12 border-t border-b border-[#334455]",
+          "lg:flex-row"
+        )}>
           {footerLinks.map((footerLink, index) => (
-            <div key={index} className="flex-1 h-fit">
-              <div className="flex items-center h-[42px] py-3">
+            <div key={index} className={clsx(
+              "flex-1 h-fit w-full",
+              "lg:w-fit"
+            )}>
+              <div className={clsx(
+                "flex items-center h-[42px] py-3 justify-center",
+                "lg:justify-start"
+              )}>
                 <h4 className="text-base leading-[17.6px] text-white font-medium">
                   {footerLink.title}
                 </h4>
               </div>
               <ul className="flex flex-col flex-1">
                 {footerLink.links.map((link, index) => (
-                  <li className="h-[46px] flex items-center py-3" key={index}>
+                  <li className={clsx(
+                    "h-[46px] flex items-center py-3 justify-center",
+                    "lg:justify-start"
+                  )}
+                    key={index}
+                  >
                     <Link className="text-base leading-[22.4px] inline-block" href={link.path}>
                       {link.title}
                     </Link>
@@ -104,13 +119,19 @@ export default function Footer() {
             </div>
           ))}
           <div className="flex-1 flex flex-col gap-2 h-fit">
-            <div className="flex items-center h-[42px] py-3">
+            <div className={clsx(
+              "flex items-center justify-center h-[42px] py-3",
+              "lg:justify-start"
+            )}>
               <h4 className="text-base leading-[17.6px] text-white font-medium">
                 Get the app
               </h4>
             </div>
             <div className="flex flex-col gap-2">
-              <button className="h-[46px] flex items-center">
+              <button className={clsx(
+                "h-[46px] flex items-center justify-center",
+                "lg:justify-start"
+              )}>
                 <Image
                   src="/images/app-store.svg"
                   alt="App Store"
@@ -118,7 +139,10 @@ export default function Footer() {
                   height={40}
                 />
               </button>
-              <button className="h-[46px] flex items-center">
+              <button className={clsx(
+                "h-[46px] flex items-center justify-center",
+                "lg:justify-start"
+              )}>
                 <Image
                   src="/images/google-play.svg"
                   alt="Google Play"
@@ -128,7 +152,10 @@ export default function Footer() {
               </button>
             </div>
             <div className="pt-12 pb-3 h-[78px]">
-              <span className="inline-block text-base font-medium leading-[17.6px]">
+              <span className={clsx(
+                "inline-block text-base font-medium leading-[17.6px] w-full text-center",
+                "lg:w-fit"
+              )}>
                 Follow Us
               </span>
             </div>
@@ -186,13 +213,22 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-full flex gap-12 py-6 h-24">
-          <div className="flex items-center flex-1">
+        <div className={clsx(
+          "w-full flex flex-col gap-6 py-6",
+          "lg:flex-row lg:gap-12 lg:py-6 lg:h-24"
+        )}>
+          <div className={clsx(
+            "flex items-center justify-center flex-1",
+            "lg:justify-start"
+          )}>
             <span className="text-base leading-[22.4px]">
               Collers @ 2023. All rights reserved.
             </span>
           </div>
-          <div className="flex gap-8">
+          <div className={clsx(
+            "flex gap-8 justify-center",
+            "lg:justify-start"
+          )}>
             <ul className="flex items-center justify-center gap-8">
               <li className="h-full flex items-center py-3">
                 <Link href="#">

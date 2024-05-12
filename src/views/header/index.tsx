@@ -1,8 +1,16 @@
+'use client';
+
 import Link from "next/link";
+import Image from "next/image";
+import { MobileMenu } from "@/components";
 import clsx from "clsx";
 import type { HeaderItem } from "@/types/index";
+import { useAppDispatch } from "@/lib/hooks";
+import { setMobileMenuOpen } from "@/redux/reducers/header";
 
 export default function Header() {
+
+  const dispatch = useAppDispatch();
 
   const headerItems: HeaderItem[] = [
     {
@@ -45,9 +53,15 @@ export default function Header() {
 
   return (
     <header
-      className="w-full h-24"
+      className={clsx(
+        "w-full",
+        "lg:h-24"
+      )}
     >
-      <div className="container h-full py-6 flex items-center justify-between">
+      <div className={clsx(
+        "container h-full py-4 flex items-center justify-between",
+        "lg:py-6"
+      )}>
         {headerItems.filter(item => !item.isNavItem).length > 0 && (
           <>
             {headerItems.map((item, index) => {
@@ -68,7 +82,10 @@ export default function Header() {
           </>
         )}
 
-        <nav className="h-full">
+        <nav className={clsx(
+          "hidden h-full",
+          "lg:block"
+        )}>
           <ul className="flex items-center gap-4 h-full">
             {headerItems.map((item, index) => {
               if (item.isNavItem) {
@@ -91,6 +108,24 @@ export default function Header() {
             })}
           </ul>
         </nav>
+
+        <button
+          className="lg:hidden"
+          onClick={() => dispatch(setMobileMenuOpen(true))}
+        >
+          <Image
+            src="/icons/icon-hamburger-menu.svg"
+            alt="Menu"
+            width={24}
+            height={24}
+            className="size-6"
+          />
+        </button>
+
+        <MobileMenu
+          headerItems={headerItems}
+        />
+
       </div>
     </header>
   );

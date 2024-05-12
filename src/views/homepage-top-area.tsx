@@ -6,13 +6,8 @@ export const HomepageTopArea = () => {
       <CollectibleSneakers />
       <Features />
       <div
-        className="absolute -z-20 bg-amber-100 left-0 bottom-0 w-full h-full"
-        style={{
-          clipPath: "polygon(100% 14.5%, 1% 100%, 100% 100%);"
-        }}
+        className="absolute -z-20 bg-amber-100 left-0 bottom-0 w-full h-full lp-top-triangle"
       ></div>
     </section>
   );
 }
-
-//matrix(-1, 0, 0, 1, 0, 0);

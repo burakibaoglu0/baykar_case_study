@@ -25,10 +25,22 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgba(255, 251, 235, 1);
+
+  @media screen and (max-width: 1023px) {
+    background: rgba(255, 255, 255, 1);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.lp-top-triangle {
+  clip-path: polygon(100% 14.5%, 1% 100%, 100% 100%);
+
+  @media screen and (max-width: 1023px) {
+    clip-path: polygon(100% 30%, -250% 100%, 100% 100%);
   }
 }

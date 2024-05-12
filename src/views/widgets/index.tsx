@@ -4,3 +4,4 @@ export * from './they-love-us';
 export * from './the-best-of-best';
 export * from './why-join-us';
 export * from './grow-your-collection'
+export * from './shoes-collected'

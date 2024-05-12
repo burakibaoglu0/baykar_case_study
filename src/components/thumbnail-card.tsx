@@ -31,8 +31,9 @@ export const ThumbnailCard = ({ hasHeader, hasPlayer, imageProps, wrapperClassNa
           src={imageProps?.src || "/images/why-join-us/video-thumbnail.png"}
           width={imageProps?.width || 520}
           height={imageProps?.height || 309}
-          className={clsx(
-            "rounded-b-[20px] object-cover w-full h-full"
+          className={twMerge(
+            "object-cover w-full h-full",
+            imageProps?.className
           )}
           alt={imageProps?.alt || "Why join us"}
           loading="lazy"

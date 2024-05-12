@@ -14,5 +14,6 @@ export type ThumbnailCardProps = {
     alt: string;
     width: number;
     height: number;
+    className?: string;
   };
 };

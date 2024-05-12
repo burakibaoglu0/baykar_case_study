@@ -25,11 +25,23 @@ export const Features = () => {
   ]
 
   return (
-    <div className="py-20">
-      <div className="container flex gap-20 z-10">
+    <div className={clsx(
+      "py-12 bg-amber-100",
+      "lg:py-20 lg:bg-transparent"
+    )}>
+      <div className={clsx(
+        "container flex flex-col gap-8 z-10 relative",
+        "lg:flex-row lg:gap-20"
+      )}>
         {featuresItems.map((item, index) => (
-          <div key={index} className="flex flex-col gap-4 text-slate-900">
-            <div className="relative overflow-hidden">
+          <div key={index} className={clsx(
+            "flex flex-col items-center justify-center gap-4 text-slate-900",
+            "lg:items-stretch lg:justify-start"
+          )}>
+            <div className={clsx(
+              "relative overflow-hidden w-full flex items-center justify-center",
+              "lg:items-stretch lg:justify-start"
+            )}>
               <Image
                 src={`/icons/icon-${item.icon}.svg`}
                 width={64}
@@ -44,9 +56,9 @@ export const Features = () => {
                 alt={item.title}
                 className={clsx(
                   "absolute top-0 -z-10",
-                  item.icon === "trophy" && "left-7",
-                  item.icon === "tunnel" && "left-7",
-                  item.icon === "tv" && "left-10"
+                  item.icon === "trophy" && "left-1/2 lg:left-7",
+                  item.icon === "tunnel" && "left-1/2 lg:left-7",
+                  item.icon === "tv" && "left-1/2 lg:left-10"
                 )}
               />
             </div>
@@ -56,7 +68,10 @@ export const Features = () => {
               </h6>
             </div>
             <div>
-              <p className="text-lg leading-[28.8px]">
+              <p className={clsx(
+                "text-lg leading-[28.8px] text-center",
+                "lg:text-start"
+              )}>
                 {item.description}
               </p>
             </div>
