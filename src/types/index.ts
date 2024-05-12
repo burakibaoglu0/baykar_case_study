@@ -1,11 +1,11 @@
-export type HeaderItem = {
+type HeaderItem = {
   label: string;
   path: string;
   isNavItem: boolean;
   hasBorder?: boolean;
 }
 
-export type ThumbnailCardProps = {
+type ThumbnailCardProps = {
   hasHeader?: boolean;
   hasPlayer?: boolean;
   wrapperClassName?: string;
@@ -17,3 +17,13 @@ export type ThumbnailCardProps = {
     className?: string;
   };
 };
+
+type ContentSectionProps = {
+  href: string;
+  title: string;
+  imagePath: string;
+  alt: string;
+  side: "left" | "right" | string;
+};
+
+export type { HeaderItem, ThumbnailCardProps, ContentSectionProps };

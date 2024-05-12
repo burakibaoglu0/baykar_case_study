@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
-type ContentSectionProps = {
-  href: string;
-  title: string;
-  imagePath: string;
-  alt: string;
-  side: "left" | "right" | string;
-};
+import type { ContentSectionProps } from "@/types";
 
 function ContentSection({ href, title, imagePath, alt, side }: ContentSectionProps) {
   return (
@@ -39,7 +32,7 @@ export default function App() {
     },
     {
       title: "Quiz App",
-      href: "/quiz",
+      href: "https://quiz-app-case-three.vercel.app/",
       imagePath: "/images/Quiz-App.png",
       alt: "Quiz App Image",
       side: "right",

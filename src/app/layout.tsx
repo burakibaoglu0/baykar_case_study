@@ -12,8 +12,8 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "Baykar | Case Study",
-  description: "Generated for Baykar",
+  title: "BAYKAR Teknoloji | Case Study",
+  description: "Generated for Baykar Job Application",
 };
 
 export default function RootLayout({
@@ -24,6 +24,9 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <html lang="en">
+        <head>
+          <link rel="icon" type="image/svg+xml" href="https://cdn.baykartech.com/static/assets/img/favicon.png" />
+        </head>
         <body className={roboto.className}>{children}</body>
       </html>
     </StoreProvider>
